@@ -13,6 +13,10 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
+if [ -f ~/.privatealiases ]; then
+  . ~/.privatealiases  # --> Read in my private aliases if present. Use for things not stored on github
+fi
+
 export ANDROID_HOME="/opt/android-sdk"
 export ANDROID_SDK_ROOT="/opt/android-sdk"
 
@@ -25,3 +29,4 @@ export PATH=$PATH:$HOME/dex2jar
 
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
+
