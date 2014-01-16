@@ -28,5 +28,4 @@ export PATH=$PATH:$GRADLE_HOME/bin
 export PATH=$PATH:$HOME/dex2jar
 
 export CLICOLOR=1
-export LSCOLORS=ExFxCxDxBxegedabagacad
-
+export LSCOLORS="gxfxcxdxbxegedabagacad"
