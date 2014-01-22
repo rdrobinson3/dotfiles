@@ -17,6 +17,9 @@ if [ -f ~/.privatealiases ]; then
   . ~/.privatealiases  # --> Read in my private aliases if present. Use for things not stored on github
 fi
 
+alias macwired='ifconfig en0 | grep ether'
+alias macwireless='ifconfig en1 | grep ether'
+
 export ANDROID_HOME="/opt/android-sdk"
 export ANDROID_SDK_ROOT="/opt/android-sdk"
 
