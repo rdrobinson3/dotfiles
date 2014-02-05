@@ -33,3 +33,5 @@
     logg = log --graph --decorate --oneline --abbrev-commit --all
 [color]
 	ui = auto
+[push]
+	default = simple
