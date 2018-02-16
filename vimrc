@@ -8,7 +8,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 filetype on
-filetype plugin indent on
+:filetype plugin indent on
 set ruler
 set autoindent
 set ignorecase
@@ -25,3 +25,12 @@ au BufReadPost *.java colorscheme monokai
 au BufReadPost *.php colorscheme two2tango
 au BufRead,BufNewFile *.json set filetype=json
 au BufRead,BufNewFile /etc/nginx/conf/* set ft=nginx
+
+autocmd vimenter * NERDTree
+
+call plug#begin('~/.config/nvim/plugged')
+
+Plug 'https://github.com/scrooloose/nerdtree.git'
+Plug 'elixir-lang/vim-elixir'
+
+call plug#end()
