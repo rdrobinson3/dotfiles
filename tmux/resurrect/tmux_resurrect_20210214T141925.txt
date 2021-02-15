@@ -1,0 +1,4 @@
+pane	0	0	:vim	1	:*	0	:/home/trey	1	vim	:vim .vimrc
+pane	0	0	:vim	1	:*	1	:/home/trey	0	htop	:htop
+window	0	0	1	:*	c749,187x97,0,0{93x97,0,0,0,93x97,94,0,1}
+state	0	

@@ -1,1 +1,0 @@
-/Users/trey/.vimrc

@@ -1,55 +1,68 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle
-call vundle#begin()
-" " alternatively, pass a path where Vundle should install plugins
-" "call vundle#begin('~/some/path/here')
+" This file represents the minimal .vimrc needed to work with govim.
 "
-" " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" We also include a number of suggested settings that we think the majority of
+" users will like/prefer.
 
-Plugin 'scrooloose/nerdtree'
-
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-map <C-n> :NERDTreeToggle<CR>
-
-:syntax on
-set t_Co=256
-set background=dark
-set hlsearch
-set nu
-set smartindent
-set tabstop=4
-set shiftwidth=4
-set expandtab
-filetype on
-:filetype plugin indent on
-set ruler
-set autoindent
-set ignorecase
-set incsearch
-set nohlsearch
+set nocompatible
+set nobackup
+set nowritebackup
+set noswapfile
 set number
+set timeoutlen=1000 ttimeoutlen=0
+colorscheme monokai-bold 
 
-au BufReadPost *.twig colorscheme koehler 
-au BufReadPost *.css colorscheme slate 
-au BufReadPost *.js colorscheme elflord 
-au BufReadPost *.py colorscheme molokai
-au BufReadPost *.html colorscheme monokai
-au BufReadPost *.java colorscheme monokai
-au BufReadPost *.php colorscheme two2tango
-au BufRead,BufNewFile *.json set filetype=json
-au BufRead,BufNewFile /etc/nginx/conf/* set ft=nginx
+filetype plugin on
 
-autocmd vimenter * NERDTree
+set mouse=a
 
-call plug#begin('~/.config/nvim/plugged')
+" To get hover working in the terminal we need to set ttymouse. See
+"
+" :help ttymouse
+"
+" for the appropriate setting for your terminal. Note that despite the
+" automated tests using xterm as the terminal, a setting of ttymouse=xterm
+" does not work correctly beyond a certain column number (citation needed)
+" hence we use ttymouse=sgr
+set ttymouse=sgr
 
-Plug 'https://github.com/scrooloose/nerdtree.git'
-Plug 'elixir-lang/vim-elixir'
+" Suggestion: By default, govim populates the quickfix window with diagnostics
+" reported by gopls after a period of inactivity, the time period being
+" defined by updatetime (help updatetime). Here we suggest a short updatetime
+" time in order that govim/Vim are more responsive/IDE-like
+set updatetime=500
 
-call plug#end()
+" Suggestion: To make govim/Vim more responsive/IDE-like, we suggest a short
+" balloondelay
+set balloondelay=250
+
+" Suggestion: Turn on the sign column so you can see error marks on lines
+" where there are quickfix errors. Some users who already show line number
+" might prefer to instead have the signs shown in the number column; in which
+" case set signcolumn=number
+set signcolumn=yes
+
+" Suggestion: Turn on syntax highlighting for .go files. You might prefer to
+" turn on syntax highlighting for all files, in which case
+"
+" syntax on
+"
+" will suffice, no autocmd required.
+autocmd! BufEnter,BufNewFile *.go,go.mod syntax on
+autocmd! BufLeave *.go,go.mod syntax off
+
+" Suggestion: turn on auto-indenting. If you want closing parentheses, braces
+" etc to be added, https://github.com/jiangmiao/auto-pairs. In future we might
+" include this by default in govim.
+set autoindent
+set smartindent
+filetype indent on
+
+" Suggestion: define sensible backspace behaviour. See :help backspace for
+" more details
+set backspace=2
+
+" Suggestion: show info for completion candidates in a popup menu
+if has("patch-8.1.1904")
+  set completeopt+=popup
+  set completepopup=align:menu,border:off,highlight:Pmenu
+endif
