@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/trey/.oh-my-zsh"
+export ZSH="/Users/trey/.oh-my-zsh"
 
 # if you want to use this, change your non-ascii font to Droid Sans Mono for Awesome
 # POWERLEVEL9K_MODE='awesome-patched'
@@ -64,3 +64,6 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 export GOPRIVATE=github.com/OOLER
+
+export LC_ALL=en_IN.UTF-8
+export LANG=en_IN.UTF-8
