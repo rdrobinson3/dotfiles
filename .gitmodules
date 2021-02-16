@@ -1,0 +1,9 @@
+[submodule "vim/pack/plugins/start/markdown-preview.nvim"]
+	path = vim/pack/plugins/start/markdown-preview.nvim
+	url = git@github.com:iamcco/markdown-preview.nvim.git
+[submodule "vim/pack/plugins/start/vim-polyglot"]
+	path = vim/pack/plugins/start/vim-polyglot
+	url = git@github.com:sheerun/vim-polyglot.git
+[submodule "vim/pack/plugins/start/vimwiki"]
+	path = vim/pack/plugins/start/vimwiki
+	url = https://github.com/vimwiki/vimwiki
