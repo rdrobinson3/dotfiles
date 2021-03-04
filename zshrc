@@ -6,7 +6,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/trey/.oh-my-zsh"
+# Mac OS
+#export ZSH="/Users/trey/.oh-my-zsh"
+#Linux
+export ZSH="/home/trey/.oh-my-zsh"
 
 # if you want to use this, change your non-ascii font to Droid Sans Mono for Awesome
 # POWERLEVEL9K_MODE='awesome-patched'

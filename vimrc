@@ -164,3 +164,7 @@ let g:mkdp_page_title = '「${name}」'
 " recognized filetypes
 " these filetypes will have MarkdownPreview... commands
 let g:mkdp_filetypes = ['markdown']
+
+" VimWiki Configuration
+let g:vimwiki_list = [{'path': '~/wiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
