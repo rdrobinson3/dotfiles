@@ -6,10 +6,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Path to your oh-my-zsh installation.
-# Mac OS
-#export ZSH="/Users/trey/.oh-my-zsh"
-#Linux
-export ZSH="/home/trey/.oh-my-zsh"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # Mac OS
+  export ZSH="/Users/$USERNAME/.oh-my-zsh"
+else
+  #Linux
+  export ZSH="/home/$USERNAME/.oh-my-zsh"
+fi
 
 # if you want to use this, change your non-ascii font to Droid Sans Mono for Awesome
 # POWERLEVEL9K_MODE='awesome-patched'
@@ -67,6 +70,6 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 export GOPRIVATE=github.com/OOLER
-
+export GO111MODULE=on
 export LC_ALL=en_IN.UTF-8
 export LANG=en_IN.UTF-8
