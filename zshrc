@@ -70,6 +70,6 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 export GOPRIVATE=github.com/OOLER
-export GO111MODULE=on
+export GO111MODULE=auto
 export LC_ALL=en_IN.UTF-8
 export LANG=en_IN.UTF-8
