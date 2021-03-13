@@ -18,7 +18,7 @@ nnoremap <silent> <expr> <F6> g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufe
 
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
-let g:mkdp_auto_start = 1 
+let g:mkdp_auto_start = 0 
 
 " set to 1, the nvim will auto close current preview window when change
 " from markdown buffer to another buffer
@@ -107,8 +107,15 @@ let g:mkdp_page_title = '「${name}」'
 " these filetypes will have MarkdownPreview... commands
 let g:mkdp_filetypes = ['markdown']
 
-let mapleader = ','
-
 " VimWiki Configuration
 let g:vimwiki_list = [{'path': '~/wiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
+
+autocmd BufRead,BufNewFile *.md setlocal spell
+
+command! Diary VimwikiDiaryIndex
+augroup vimwikigroup
+   autocmd!
+   " automatically update links on read diary
+   autocmd BufRead,BufNewFile diary.md VimwikiDiaryGenerateLinks
+augroup end
