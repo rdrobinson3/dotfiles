@@ -125,3 +125,12 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+" Templates for new files
+if has("autocmd")
+   augroup templates
+       autocmd BufNewFile *ppl.md 0r ~/.vim/templates/people.md
+       autocmd BufNewFile *int.md 0r ~/.vim/templates/candidates.md
+       autocmd BufNewFile *meet execute 'file' fnameescape(strftime("meeting-notes-%Y-%m-%d.md"))
+   augroup END
+endif
