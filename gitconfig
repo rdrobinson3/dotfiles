@@ -18,3 +18,12 @@ undo = reset HEAD~1 --mixed
     keepTemporaries = false
     trustExitCode = false
     keepBackup = false
+	path = /usr/local/bin/p4merge
+[mergetool "p4merge"]
+	path = /usr/local/bin/p4merge
+[mergetool]
+	prompt = false
+[diff]
+	tool = p4merge
+[difftool]
+	prompt = false
