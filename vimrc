@@ -11,9 +11,12 @@ syntax on
 
 let mapleader = ','
 
-
-set pythonhome=/usr/local/bin/python3.9
+if !has('nvim')
+    set pythonhome=/usr/local/bin/python3.9
+endif
 " Keybindings
+"
+set clipboard^=unnamed,unnamedplus
 
 " open or close nerdtree
 nnoremap <silent> <expr> <F6> g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
