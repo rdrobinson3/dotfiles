@@ -11,6 +11,8 @@ syntax on
 
 let mapleader = ','
 
+
+set pythonhome=/usr/local/bin/python3.9
 " Keybindings
 
 " open or close nerdtree
