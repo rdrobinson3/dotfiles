@@ -10,3 +10,6 @@
 [submodule "vim/pack/plugins/start/vim-go"]
 	path = vim/pack/plugins/start/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "vim/pack/plugins/start/taskwiki"]
+	path = vim/pack/plugins/start/taskwiki
+	url = https://github.com/tools-life/taskwiki
