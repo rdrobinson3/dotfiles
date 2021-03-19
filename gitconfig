@@ -27,3 +27,5 @@ undo = reset HEAD~1 --mixed
 	tool = p4merge
 [difftool]
 	prompt = false
+[core]
+	editor = vim
