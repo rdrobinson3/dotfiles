@@ -67,6 +67,11 @@ export SDKMAN_DIR="/home/trey/.sdkman"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 alias python=python3
+
+# if using nvim
+alias vim="nvim"
+alias vi="nvim"
+
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
