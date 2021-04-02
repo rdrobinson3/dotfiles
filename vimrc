@@ -178,3 +178,7 @@ inoremap <C-Space> <C-x><C-o>
 
 " close preview mode after code completion selection is made 
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+au VimEnter * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+au VimLeave * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+
