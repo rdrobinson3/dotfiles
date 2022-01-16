@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="zshrc p10k.zsh vimrc vim gitignore_global gitconfig tmux tmux.conf taskrc"    # list of files/folders to symlink in homedir
+files="zshrc p10k.zsh gitignore_global gitconfig tmux tmux.conf taskrc"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -29,5 +29,8 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
+
+mv ~/.config/nvim ~/dotfiles_old/
+ln -s $dir/nvim ~/.config/nvim
 
 git submodule update --init --recursive

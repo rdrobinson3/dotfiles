@@ -75,7 +75,10 @@ alias vi="nvim"
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
-export GOPRIVATE=github.com/OOLER
+export PATH=$PATH:/home/trey/.local/bin
+export PATH=$PATH:/home/trey/Projects/algorand/sandbox
+export GOPRIVATE=github.com/OOLER,github.com/rdrobinson3
 export GO111MODULE=auto
 export LC_ALL=en_IN.UTF-8
 export LANG=en_IN.UTF-8
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
